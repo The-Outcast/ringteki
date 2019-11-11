@@ -773,8 +773,8 @@ class DrawCard extends BaseCard {
             });
             return true;
         } else if(illegalAttachments.length > 0) {
-            this.game.addMessage('{0} {1} discarded from {2} as it is no longer legally attached', illegalAttachments, illegalAttachments.length > 1 ? 'are' : 'is', this);
-            this.game.applyGameAction(null, { discardFromPlay: illegalAttachments});
+            this.game.addMessage('{0} {1} discarded from {3} as {2} {1} no longer legally attached', illegalAttachments, illegalAttachments.length > 1 ? 'are' : 'is', illegalAttachments.length > 1 ? 'it' : 'they', this);
+            this.game.applyGameAction(context, { discardFromPlay: illegalAttachments });
             return true;
         }
         return false;

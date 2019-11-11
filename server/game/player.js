@@ -856,6 +856,10 @@ class Player extends GameObject {
         };
 
         let type = card.type;
+        if(location === Locations.DynastyDiscardPile || location === Locations.ConflictDiscardPile) {
+            type = card.printedType;
+        }
+
         if(type === 'character') {
             type = card.isDynasty ? 'dynastyCharacter' : 'conflictCharacter';
         }
